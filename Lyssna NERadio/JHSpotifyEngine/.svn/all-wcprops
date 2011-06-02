@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine
+END
+NSData+Base64.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/NSData+Base64.h
+END
+JHSpotifyAlbumXMLParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyAlbumXMLParser.h
+END
+NSData+Base64.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/NSData+Base64.m
+END
+JHSpotifyEngineDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyEngineDelegate.h
+END
+JHSpotifyTrackXMLParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyTrackXMLParser.h
+END
+JHSpotifyAlbumXMLParser.m
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyAlbumXMLParser.m
+END
+JHSpotifyArtistXMLParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyArtistXMLParser.h
+END
+JHSpotifyEngine.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyEngine.h
+END
+JHSpotifyTrackXMLParser.m
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyTrackXMLParser.m
+END
+JHSpotifyGlobalHeader.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyGlobalHeader.h
+END
+JHSpotifyArtistXMLParser.m
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyArtistXMLParser.m
+END
+NSString+UUID.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/NSString+UUID.h
+END
+JHSpotifyEngine.m
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyEngine.m
+END
+JHSpotifyXMLParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyXMLParser.h
+END
+JHSpotifyRequestTypes.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyRequestTypes.h
+END
+NSString+UUID.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/NSString+UUID.m
+END
+JHSpotifyXMLParser.m
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyXMLParser.m
+END
+JHSpotifyHTTPURLConnection.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyHTTPURLConnection.h
+END
+JHSpotifyParserDelegate.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyParserDelegate.h
+END
+JHSpotifyHTTPURLConnection.m
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/radiolyssnaren/!svn/ver/1/RadioLyssnaren/JHSpotifyEngine/JHSpotifyHTTPURLConnection.m
+END
