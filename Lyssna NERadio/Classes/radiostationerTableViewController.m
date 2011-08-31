@@ -50,6 +50,7 @@
 	//				green:218.0/255.0
 	//				 blue:226.0/255.0
 	//				alpha:1];
+	self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]];
     self.tableView.allowsSelectionDuringEditing = YES;
 	
 }
@@ -68,7 +69,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     Lyssna_NERadioAppDelegate *appDelegate = (Lyssna_NERadioAppDelegate *)[[UIApplication sharedApplication] delegate];
-        if(appDelegate.detailView != nil && [appDelegate.streamer isPlaying])
+        if(appDelegate.detailView != nil && (![appDelegate.streamer isIdle]))
         {
             if(self.navigationItem.rightBarButtonItem == nil) {
                 UIBarButtonItem* nowButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Now Playing", @"LyssnaNowPlaying") style:UIBarButtonItemStyleDone target:self action:@selector(nowPlayingPush)];

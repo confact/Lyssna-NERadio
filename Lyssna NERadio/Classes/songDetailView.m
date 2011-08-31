@@ -30,6 +30,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	self.title = @"Info";
 	self.spotifyURL = @"";
+	self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]];
     //self.spotifyBought = [[NSUserDefaults standardUserDefaults] boolForKey:@"com.devsnackinc.LyssnaNERadio.spotify"];
 }
 

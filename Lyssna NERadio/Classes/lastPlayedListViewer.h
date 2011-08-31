@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "ShadowedTableView.h"
 @interface lastPlayedListViewer : UITableViewController <UITableViewDelegate, UINavigationControllerDelegate> {
 	NSManagedObjectContext *managedObjectContext;
 	NSManagedObjectModel *managedObjectModel;
 	IBOutlet UISearchBar *sBar;//search bar
-	IBOutlet UITableView *tableView;
+	IBOutlet ShadowedTableView *tableView;
 	BOOL searching;
 	BOOL letUserSelectRow;
 	NSMutableArray *tableData;

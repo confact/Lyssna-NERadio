@@ -32,11 +32,12 @@
 	self.songs = a;
 	[d release];
 	//[array release];
-	self.tableView.backgroundColor = [UIColor colorWithRed:206.0/255.0
-													 green:218.0/255.0
-													  blue:226.0/255.0
-													 alpha:1];
-    [super viewDidLoad];
+	//self.tableView.backgroundColor = [UIColor colorWithRed:206.0/255.0
+	//												 green:218.0/255.0
+	//												  blue:226.0/255.0
+	//												 alpha:1];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]];
+	[super viewDidLoad];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;

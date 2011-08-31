@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "ShadowedTableView.h"
 @interface radiostationerTableViewController : UITableViewController { 
 	NSManagedObjectContext *managedObjectContext;
 	NSManagedObjectModel *managedObjectModel;
-    
 }
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) IBOutlet ShadowedTableView *tableView;
 //- (IBAction) EditTable:(id)sender;
 - (IBAction)AddButtonAction:(id)sender;
 @end

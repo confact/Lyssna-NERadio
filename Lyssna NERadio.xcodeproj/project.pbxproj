@@ -117,6 +117,7 @@
 		969B0DFB1325B5ED00102B8C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969B0DFA1325B5ED00102B8C /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		969B0E8C1325BC7900102B8C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969B0E8B1325BC7800102B8C /* CoreLocation.framework */; };
 		969B0EB1132693A800102B8C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969B0EB0132693A700102B8C /* StoreKit.framework */; };
+		969D8072140ED62E00A88A13 /* ShadowedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 969D8071140ED62D00A88A13 /* ShadowedTableView.m */; };
 		96C52297133ABD2900AFBFEC /* lastPlayedListViewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96C52296133ABD2900AFBFEC /* lastPlayedListViewer.xib */; };
 /* End PBXBuildFile section */
 
@@ -317,6 +318,8 @@
 		969B0DFA1325B5ED00102B8C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		969B0E8B1325BC7800102B8C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		969B0EB0132693A700102B8C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		969D8070140ED62D00A88A13 /* ShadowedTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowedTableView.h; sourceTree = "<group>"; };
+		969D8071140ED62D00A88A13 /* ShadowedTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowedTableView.m; sourceTree = "<group>"; };
 		96C52296133ABD2900AFBFEC /* lastPlayedListViewer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = lastPlayedListViewer.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -599,6 +602,8 @@
 		9651BFFF13079DF800CD9C61 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				969D8070140ED62D00A88A13 /* ShadowedTableView.h */,
+				969D8071140ED62D00A88A13 /* ShadowedTableView.m */,
 				9651C01413079DF800CD9C61 /* radioStation.xcdatamodeld */,
 				9651C0821307A04500CD9C61 /* radioStation.h */,
 				9651C0831307A04500CD9C61 /* radioStation.m */,
@@ -847,6 +852,7 @@
 				960F2E88140E2AA4004C22F1 /* CJSONScanner.m in Sources */,
 				960F2E89140E2AA4004C22F1 /* CJSONSerializer.m in Sources */,
 				960F2E8A140E2AA4004C22F1 /* CSerializedJSONData.m in Sources */,
+				969D8072140ED62E00A88A13 /* ShadowedTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

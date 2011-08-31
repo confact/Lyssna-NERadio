@@ -35,11 +35,11 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	self.title = NSLocalizedString(@"Last Played", @"LastPlayedTitle");
-	self.tableView.backgroundColor = [UIColor colorWithRed:206.0/255.0
-													 green:218.0/255.0
-													  blue:226.0/255.0
-													 alpha:1];
-	
+	//self.tableView.backgroundColor = [UIColor colorWithRed:206.0/255.0
+	//												 green:218.0/255.0
+	//												  blue:226.0/255.0
+	//												 alpha:1];
+	self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]];
 	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 	[super viewDidLoad];
 
