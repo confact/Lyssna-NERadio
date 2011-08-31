@@ -38,6 +38,7 @@
 @property (nonatomic,retain) NSURLConnection *imageConnection;
 @property (nonatomic,retain) AdWhirlCustomAdView *adView;
 @property (nonatomic,retain) AdWhirlWebBrowserController *webBrowserController;
+@property (nonatomic, assign) CGFloat scale;
 
 @end
 
@@ -48,6 +49,7 @@
 @synthesize imageConnection;
 @synthesize adView;
 @synthesize webBrowserController;
+@synthesize scale;
 
 + (AdWhirlAdNetworkType)networkType {
   return AdWhirlAdNetworkTypeCustom;
@@ -274,8 +276,18 @@
       return NO;
     }
 
-    // fetch image
-    NSString * imageURL = [adInfo objectForKey:@"img_url"];
+    // fetch image, set scale
+    self.scale = [[UIScreen mainScreen] respondsToSelector:@selector(scale)] ? [[UIScreen mainScreen] scale] : 1.0;
+    NSString *imageURL;
+    if (self.scale == 2.0 && adType == AWCustomAdTypeBanner) {
+      imageURL = [adInfo objectForKey:@"img_url_640x100"];
+      if (imageURL == nil || [imageURL length] == 0) {
+        self.scale = 1.0f;
+        imageURL = [adInfo objectForKey:@"img_url"];
+      }
+    } else {
+      imageURL = [adInfo objectForKey:@"img_url"];
+    }
     AWLogDebug(@"Request custom ad image at %@", imageURL);
     NSURLRequest *imageRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:imageURL]];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:imageRequest
@@ -330,6 +342,11 @@
   }
   else if (conn == imageConnection) {
     UIImage *image = [[UIImage alloc] initWithData:imageData];
+    if (self.scale == 2.0) {
+      UIImage *img = [[UIImage alloc] initWithCGImage:image.CGImage scale:2.0 orientation:image.imageOrientation];
+      [image release];
+      image = img;
+    }
     if (image == nil) {
       [self.adWhirlView adapter:self didFailAd:[AdWhirlError errorWithCode:AdWhirlCustomAdImageError
                                                           description:@"Cannot initialize custom ad image from data"]];

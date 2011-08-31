@@ -46,10 +46,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
-	self.tableView.backgroundColor = [UIColor colorWithRed:206.0/255.0
-					green:218.0/255.0
-					 blue:226.0/255.0
-					alpha:1];
+	// self.tableView.backgroundColor = [UIColor colorWithRed:206.0/255.0
+	//				green:218.0/255.0
+	//				 blue:226.0/255.0
+	//				alpha:1];
     self.tableView.allowsSelectionDuringEditing = YES;
 	
 }

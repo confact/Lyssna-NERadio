@@ -1,7 +1,7 @@
 /*
 
  AdWhirlWebBrowserController.m
- 
+
  Copyright 2009 AdMob, Inc.
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.
- 
+
 */
 
 #import "AdWhirlWebBrowserController.h"
@@ -47,7 +47,7 @@
 
 
 - (id)init {
-  if (self = [super initWithNibName:@"AdWhirlWebBrowser" bundle:nil]) {
+  if ((self = [super initWithNibName:@"AdWhirlWebBrowser" bundle:nil])) {
   }
   return self;
 }
@@ -73,13 +73,13 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   NSArray *items = self.toolBar.items;
-  
+
   NSMutableArray *loadingItems = [[NSMutableArray alloc] init];
   [loadingItems addObjectsFromArray:items];
   [loadingItems removeObjectAtIndex:4];
   self.loadingButtons = loadingItems;
   [loadingItems release], loadingItems = nil;
-  
+
   NSMutableArray *loadedItems = [[NSMutableArray alloc] init];
   [loadedItems addObjectsFromArray:items];
   [loadedItems removeObjectAtIndex:5];
@@ -100,7 +100,7 @@
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
+
 	// Release any cached data, images, etc that aren't in use.
 }
 
@@ -190,7 +190,7 @@
 	if (self.webView.request) {
     self.linkOutButton.enabled = YES;
   }
-  
+
 //  // extract title of page
 //  NSString* title = [self.webView stringByEvaluatingJavaScriptFromString: @"document.title"];
 //  self.navigationItem.title = title;
@@ -225,10 +225,12 @@
 }
 
 - (IBAction)linkOut:(id)sender {
+  [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
   [[UIApplication sharedApplication] openURL:self.webView.request.URL];
 }
 
 - (IBAction)close:(id)sender {
+  [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
   [viewControllerForPresenting dismissModalViewControllerAnimated:YES];
 }
 
@@ -251,7 +253,7 @@
   CGContextAddLineToPoint(ctx, tip.x, tip.y);
   CGContextAddLineToPoint(ctx, top.x, top.y);
   CGContextFillPath(ctx);
-  
+
   // set the image
   CGImageRef backImgRef = CGBitmapContextCreateImage(ctx);
   CGContextRelease(ctx);
