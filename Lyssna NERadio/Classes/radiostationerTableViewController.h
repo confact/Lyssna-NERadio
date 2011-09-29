@@ -15,7 +15,7 @@
 }
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain) IBOutlet ShadowedTableView *tableView;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 //- (IBAction) EditTable:(id)sender;
 - (IBAction)AddButtonAction:(id)sender;
 @end

@@ -129,7 +129,7 @@
     
     if (cell == nil)
     {
-        cell = [[[stationCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[stationCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
     }
 
     

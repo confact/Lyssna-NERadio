@@ -17,10 +17,11 @@
 		// Initialization code
 		
 		UIImage *backgroundImage = [UIImage imageNamed:@"cellbg.png"];
-		UIImageView *bgView = [[UIImageView alloc] initWithFrame:self.backgroundView.frame];
+		UIImageView *bgView = [[UIImageView alloc] initWithFrame:self.frame];
 		bgView.image = backgroundImage;
 		[self setBackgroundView: bgView];
 		[bgView release];
+
 		
 		title = [[UILabel alloc]init];
 		
@@ -32,9 +33,9 @@
 										  alpha:1];
 		title.backgroundColor = [UIColor clearColor];
 		
-		title.font = [UIFont systemFontOfSize:22];
+		//title.font = [UIFont systemFontOfSize:18];
 		
-		//title.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
+		title.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
 		
 		[self.contentView addSubview:title];
     }
@@ -60,7 +61,7 @@
 										  alpha:1];
 		title.backgroundColor = [UIColor clearColor];
 		
-		//title.font = [UIFont systemFontOfSize:22];
+		//title.font = [UIFont systemFontOfSize:18];
 		
 		title.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
 		
