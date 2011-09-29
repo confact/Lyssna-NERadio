@@ -69,7 +69,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     Lyssna_NERadioAppDelegate *appDelegate = (Lyssna_NERadioAppDelegate *)[[UIApplication sharedApplication] delegate];
-        if(appDelegate.detailView != nil && (![appDelegate.streamer isIdle]))
+        if(appDelegate.detailView != nil && (![appDelegate.streamer isIdle] || [appDelegate.streamer isPlaying] || [appDelegate.streamer isWaiting]))
         {
             if(self.navigationItem.rightBarButtonItem == nil) {
                 UIBarButtonItem* nowButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Now Playing", @"LyssnaNowPlaying") style:UIBarButtonItemStyleDone target:self action:@selector(nowPlayingPush)];
