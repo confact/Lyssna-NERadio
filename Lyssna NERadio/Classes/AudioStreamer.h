@@ -196,6 +196,7 @@ extern NSString * const ASUpdateMetadataNotification;
 - (void)pause;
 - (BOOL)isPlaying;
 - (BOOL)isPaused;
+- (BOOL)isFinishing;
 - (BOOL)isWaiting;
 - (BOOL)isIdle;
 - (void)seekToTime:(double)newSeekTime;

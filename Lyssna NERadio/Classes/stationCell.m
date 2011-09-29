@@ -13,8 +13,30 @@
 @synthesize title;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
-        // Initialization code
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+		// Initialization code
+		
+		UIImage *backgroundImage = [UIImage imageNamed:@"cellbg.png"];
+		UIImageView *bgView = [[UIImageView alloc] initWithFrame:self.backgroundView.frame];
+		bgView.image = backgroundImage;
+		[self setBackgroundView: bgView];
+		[bgView release];
+		
+		title = [[UILabel alloc]init];
+		
+		title.textAlignment = UITextAlignmentLeft;
+		
+		title.textColor = [UIColor colorWithRed:36.0/255.0
+										  green:46.0/255.0
+										   blue:52.0/255.0
+										  alpha:1];
+		title.backgroundColor = [UIColor clearColor];
+		
+		title.font = [UIFont systemFontOfSize:22];
+		
+		//title.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
+		
+		[self.contentView addSubview:title];
     }
     return self;
 }
@@ -40,7 +62,7 @@
 		
 		//title.font = [UIFont systemFontOfSize:22];
 		
-		title.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
+		title.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
 		
 		[self.contentView addSubview:title];
 		
