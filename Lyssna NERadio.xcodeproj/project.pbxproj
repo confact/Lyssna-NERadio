@@ -72,13 +72,11 @@
 		9651C03B13079DF800CD9C61 /* radioStation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9651C01413079DF800CD9C61 /* radioStation.xcdatamodeld */; };
 		9651C03C13079DF800CD9C61 /* radiostationerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651C01813079DF800CD9C61 /* radiostationerTableViewController.m */; };
 		9651C03D13079DF800CD9C61 /* radiostationerTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9651C01913079DF800CD9C61 /* radiostationerTableViewController.xib */; };
-		9651C03E13079DF800CD9C61 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651C01B13079DF800CD9C61 /* RootViewController.m */; };
 		9651C04013079DF800CD9C61 /* songtableviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651C01F13079DF800CD9C61 /* songtableviewCell.m */; };
 		9651C04213079DF800CD9C61 /* stationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651C02213079DF800CD9C61 /* stationCell.m */; };
 		9651C04313079DF800CD9C61 /* stationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9651C02313079DF800CD9C61 /* stationCell.xib */; };
 		9651C04513079DF800CD9C61 /* stationPlayedSongs.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651C02713079DF800CD9C61 /* stationPlayedSongs.m */; };
 		9651C04613079DF800CD9C61 /* stationPlayedSongs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9651C02813079DF800CD9C61 /* stationPlayedSongs.xib */; };
-		9651C04713079DF800CD9C61 /* StationTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651C02A13079DF800CD9C61 /* StationTabBarController.m */; };
 		9651C04813079DF800CD9C61 /* StationTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9651C02B13079DF800CD9C61 /* StationTabBarController.xib */; };
 		9651C04913079DF800CD9C61 /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651C02F13079DF800CD9C61 /* UIDevice+Hardware.m */; };
 		9651C06E13079F7300CD9C61 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651C06B13079F7300CD9C61 /* Appirater.m */; };
@@ -105,13 +103,10 @@
 		9651C0D31307ACB500CD9C61 /* DetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651C0D21307ACB300CD9C61 /* DetailView.m */; };
 		9651C0D71307AD3A00CD9C61 /* loadingbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9651C0D61307AD3A00CD9C61 /* loadingbutton.png */; };
 		96608511135E80160028A285 /* DetailViewipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96608513135E80160028A285 /* DetailViewipad.xib */; };
-		9660851A13624F0C0028A285 /* minusmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9660851813624F0B0028A285 /* minusmark.png */; };
-		9660851B13624F0C0028A285 /* plusmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9660851913624F0B0028A285 /* plusmark.png */; };
 		967796AB132EF59700E600FE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 967796AA132EF59700E600FE /* Default.png */; };
 		967796B3132EFA0200E600FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 967796B1132EFA0200E600FE /* Localizable.strings */; };
 		967796B4132EFB2D00E600FE /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967796B6132EFB2D00E600FE /* DetailView.xib */; };
 		967796BA132EFB3F00E600FE /* Lyssna_NERadioAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 967796BC132EFB3F00E600FE /* Lyssna_NERadioAppDelegate.m */; };
-		96972D201326B75300E6CE7A /* InAppPurchaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96972D1F1326B75200E6CE7A /* InAppPurchaseController.m */; };
 		969B0C2A13214D3E00102B8C /* songDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 969B0C2813214D3E00102B8C /* songDetailView.m */; };
 		969B0C2B13214D3E00102B8C /* songDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969B0C2913214D3E00102B8C /* songDetailView.xib */; };
 		969B0DFB1325B5ED00102B8C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969B0DFA1325B5ED00102B8C /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -250,8 +245,6 @@
 		9651C01713079DF800CD9C61 /* radiostationerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = radiostationerTableViewController.h; sourceTree = "<group>"; };
 		9651C01813079DF800CD9C61 /* radiostationerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = radiostationerTableViewController.m; sourceTree = "<group>"; };
 		9651C01913079DF800CD9C61 /* radiostationerTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = radiostationerTableViewController.xib; path = Classes/radiostationerTableViewController.xib; sourceTree = "<group>"; };
-		9651C01A13079DF800CD9C61 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		9651C01B13079DF800CD9C61 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		9651C01E13079DF800CD9C61 /* songtableviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = songtableviewCell.h; sourceTree = "<group>"; };
 		9651C01F13079DF800CD9C61 /* songtableviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = songtableviewCell.m; sourceTree = "<group>"; };
 		9651C02113079DF800CD9C61 /* stationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stationCell.h; sourceTree = "<group>"; };
@@ -260,8 +253,6 @@
 		9651C02613079DF800CD9C61 /* stationPlayedSongs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stationPlayedSongs.h; sourceTree = "<group>"; };
 		9651C02713079DF800CD9C61 /* stationPlayedSongs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stationPlayedSongs.m; sourceTree = "<group>"; };
 		9651C02813079DF800CD9C61 /* stationPlayedSongs.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = stationPlayedSongs.xib; path = Classes/stationPlayedSongs.xib; sourceTree = "<group>"; };
-		9651C02913079DF800CD9C61 /* StationTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationTabBarController.h; sourceTree = "<group>"; };
-		9651C02A13079DF800CD9C61 /* StationTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationTabBarController.m; sourceTree = "<group>"; };
 		9651C02B13079DF800CD9C61 /* StationTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StationTabBarController.xib; path = Classes/StationTabBarController.xib; sourceTree = "<group>"; };
 		9651C02E13079DF800CD9C61 /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
 		9651C02F13079DF800CD9C61 /* UIDevice+Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Hardware.m"; sourceTree = "<group>"; };
@@ -298,8 +289,6 @@
 		96608515135E80770028A285 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = nl.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		96608516135E81140028A285 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		96608517135E832C0028A285 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9660851813624F0B0028A285 /* minusmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minusmark.png; sourceTree = "<group>"; };
-		9660851913624F0B0028A285 /* plusmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusmark.png; sourceTree = "<group>"; };
 		966B484F1365F94D0091DBF0 /* sv */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = sv; path = "sv.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		966B48501365F9510091DBF0 /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = nl; path = "nl.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		966B48511365F9530091DBF0 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = "es.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
@@ -310,8 +299,6 @@
 		967796B5132EFB2D00E600FE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailView.xib; sourceTree = "<group>"; };
 		967796BB132EFB3F00E600FE /* en */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = en; path = en.lproj/Lyssna_NERadioAppDelegate.m; sourceTree = "<group>"; };
 		967796BD132EFB4300E600FE /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
-		96972D1E1326B75200E6CE7A /* InAppPurchaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppPurchaseController.h; sourceTree = "<group>"; };
-		96972D1F1326B75200E6CE7A /* InAppPurchaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppPurchaseController.m; sourceTree = "<group>"; };
 		969B0C2713214D3E00102B8C /* songDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = songDetailView.h; sourceTree = "<group>"; };
 		969B0C2813214D3E00102B8C /* songDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = songDetailView.m; sourceTree = "<group>"; };
 		969B0C2913214D3E00102B8C /* songDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = songDetailView.xib; path = Classes/songDetailView.xib; sourceTree = "<group>"; };
@@ -588,8 +575,6 @@
 				9651C07213079F8200CD9C61 /* icon_volume.png */,
 				963CEC6F13490617004659DE /* icon_volume@2x.png */,
 				9634FEAD134BB3A100FD737D /* Icon-72.png */,
-				9660851813624F0B0028A285 /* minusmark.png */,
-				9660851913624F0B0028A285 /* plusmark.png */,
 				9634FEB0134BB3C600FD737D /* Icon.png */,
 				9634FEB4134BB46400FD737D /* Icon@2x.png */,
 				9651BFD913079CF400CD9C61 /* Lyssna_NERadio-Info.plist */,
@@ -619,8 +604,6 @@
 				9651C01113079DF800CD9C61 /* LevelMeterView.m */,
 				9651C01713079DF800CD9C61 /* radiostationerTableViewController.h */,
 				9651C01813079DF800CD9C61 /* radiostationerTableViewController.m */,
-				9651C01A13079DF800CD9C61 /* RootViewController.h */,
-				9651C01B13079DF800CD9C61 /* RootViewController.m */,
 				9651C01E13079DF800CD9C61 /* songtableviewCell.h */,
 				9651C01F13079DF800CD9C61 /* songtableviewCell.m */,
 				9651C0D11307ACB200CD9C61 /* DetailView.h */,
@@ -631,12 +614,8 @@
 				969B0C2813214D3E00102B8C /* songDetailView.m */,
 				9651C02613079DF800CD9C61 /* stationPlayedSongs.h */,
 				9651C02713079DF800CD9C61 /* stationPlayedSongs.m */,
-				9651C02913079DF800CD9C61 /* StationTabBarController.h */,
-				9651C02A13079DF800CD9C61 /* StationTabBarController.m */,
 				9651C02E13079DF800CD9C61 /* UIDevice+Hardware.h */,
 				9651C02F13079DF800CD9C61 /* UIDevice+Hardware.m */,
-				96972D1E1326B75200E6CE7A /* InAppPurchaseController.h */,
-				96972D1F1326B75200E6CE7A /* InAppPurchaseController.m */,
 			);
 			indentWidth = 4;
 			path = Classes;
@@ -777,8 +756,6 @@
 				9634FEBE134F64BF00FD737D /* Icon-72.png in Resources */,
 				96608511135E80160028A285 /* DetailViewipad.xib in Resources */,
 				963A3DFD1350E31E000225B9 /* songDetailViewController.xib in Resources */,
-				9660851A13624F0C0028A285 /* minusmark.png in Resources */,
-				9660851B13624F0C0028A285 /* plusmark.png in Resources */,
 				960F2E03140E2A24004C22F1 /* README.txt in Resources */,
 				960F2E65140E2A94004C22F1 /* AdWhirlWebBrowser.xib in Resources */,
 				960F2E91140E2E48004C22F1 /* Volume-down.png in Resources */,
@@ -802,18 +779,15 @@
 				9651C03913079DF800CD9C61 /* LevelMeterView.m in Sources */,
 				9651C03B13079DF800CD9C61 /* radioStation.xcdatamodeld in Sources */,
 				9651C03C13079DF800CD9C61 /* radiostationerTableViewController.m in Sources */,
-				9651C03E13079DF800CD9C61 /* RootViewController.m in Sources */,
 				9651C04013079DF800CD9C61 /* songtableviewCell.m in Sources */,
 				9651C04213079DF800CD9C61 /* stationCell.m in Sources */,
 				9651C04513079DF800CD9C61 /* stationPlayedSongs.m in Sources */,
-				9651C04713079DF800CD9C61 /* StationTabBarController.m in Sources */,
 				9651C04913079DF800CD9C61 /* UIDevice+Hardware.m in Sources */,
 				9651C06E13079F7300CD9C61 /* Appirater.m in Sources */,
 				9651C0811307A02200CD9C61 /* song.m in Sources */,
 				9651C0841307A04500CD9C61 /* radioStation.m in Sources */,
 				9651C0D31307ACB500CD9C61 /* DetailView.m in Sources */,
 				969B0C2A13214D3E00102B8C /* songDetailView.m in Sources */,
-				96972D201326B75300E6CE7A /* InAppPurchaseController.m in Sources */,
 				960F2DF0140E287F004C22F1 /* JHSpotifyAlbumXMLParser.m in Sources */,
 				960F2DF1140E287F004C22F1 /* JHSpotifyArtistXMLParser.m in Sources */,
 				960F2DF2140E287F004C22F1 /* JHSpotifyEngine.m in Sources */,
@@ -959,6 +933,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hakan Nylen (97J4259T5Q)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -979,6 +954,7 @@
 					"\"$(SRCROOT)/Lyssna NERadio/GoogleAdMobAdsSDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "50C44B0A-4D12-41A8-AEBD-B4280D5B7BBB";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
