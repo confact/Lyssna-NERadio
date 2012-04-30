@@ -8,8 +8,14 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <Foundation/Foundation.h>
 
+@protocol GADAdNetworkExtras;
+
 // Constant for getting test ads on the simulator using the testDevices method.
 #define GAD_SIMULATOR_ID @"Simulator"
+
+// The google ad mob network name to use with the additional parameters methods
+// below.
+#define kGADGoogleAdMobNetworkName @"GoogleAdMobAds"
 
 // Genders to help deliver more relevant ads.
 typedef enum {
@@ -24,8 +30,27 @@ typedef enum {
 // Creates an autoreleased GADRequest.
 + (GADRequest *)request;
 
-// Reserved for future use.
-@property (nonatomic, retain) NSDictionary *additionalParameters;
+#pragma mark Additional Parameters For Ad Networks
+
+// Ad networks may have additional parameters they accept. To pass these
+// parameters to them, create the ad network extras object for that network,
+// fill in the parameters, and register it here. The ad network should have a
+// header defining the interface for the 'extras' object to create. All
+// networks will have access to the basic settings you've set in this GADRequest
+// (gender, birthday, testing mode, etc.). If you register an extras object
+// that is the same class as one you have registered before, the previous
+// extras will be overwritten.
+- (void)registerAdNetworkExtras:(id<GADAdNetworkExtras>)extras;
+
+// Get the network extras defined for an ad network.
+- (id<GADAdNetworkExtras>)adNetworkExtrasFor:(Class<GADAdNetworkExtras>)clazz;
+
+// Unsets the extras for an ad network. |clazz| is the class which represents
+// that network's extras type.
+- (void)removeAdNetworkExtrasFor:(Class<GADAdNetworkExtras>)clazz;
+
+// Extras sent to the mediation server (if using Mediation). For future use.
+@property (nonatomic, retain) NSDictionary *mediationExtras;
 
 #pragma mark Collecting SDK Information
 
@@ -34,19 +59,8 @@ typedef enum {
 
 #pragma mark Testing
 
-// Test ads are returned to these devices.  Device identifiers are the same used
-// to register as a development device with Apple.  To obtain a value open the
-// Organizer (Window -> Organizer from Xcode), control-click or right-click on
-// the device's name, and choose "Copy Device Identifier".  Alternatively you
-// can obtain it through code using [[UIDevice currentDevice] uniqueIdentifier].
-//
-// For example:
-//   request.testDevices = [NSArray arrayWithObjects:
-//       GAD_SIMULATOR_ID,                               // Simulator
-//       //@"28ab37c3902621dd572509110745071f0101b124",  // Test iPhone 3G 3.0.1
-//       @"8cf09e81ef3ec5418c3450f7954e0e95db8ab200",    // Test iPod 4.3.1
-//       nil];
-@property (nonatomic, retain) NSArray *testDevices;
+// Setting this property to YES will return a test ad for this request.
+@property (nonatomic, getter=isTesting) BOOL testing;
 
 #pragma mark User Information
 
@@ -83,7 +97,12 @@ typedef enum {
 #pragma mark -
 #pragma mark Deprecated Methods
 
-// Please use testDevices instead.
-@property (nonatomic, getter=isTesting) BOOL testing;
+// Please use the testing property instead.
+@property (nonatomic, retain) NSArray *testDevices;
+
+// Accesses the additionalParameters for the "GoogleAdmob" ad network. Please
+// use -registerAdNetworkExtras: method above and pass an instance of
+// GADAdMobExtras instead.
+@property (nonatomic, retain) NSDictionary *additionalParameters;
 
 @end

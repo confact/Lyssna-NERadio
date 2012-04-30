@@ -5,29 +5,35 @@
 //  Created by Matt Gallagher on 27/09/08.
 //  Copyright 2008 Matt Gallagher. All rights reserved.
 //
-//  Permission is given to use this source code file, free of charge, in any
-//  project, commercial or otherwise, entirely at your risk, with the condition
-//  that any redistribution (in part or whole) of source code must retain
-//  this copyright and permission notice. Attribution in compiled projects is
-//  appreciated but not required.
+//  This software is provided 'as-is', without any express or implied
+//  warranty. In no event will the authors be held liable for any damages
+//  arising from the use of this software. Permission is granted to anyone to
+//  use this software for any purpose, including commercial applications, and to
+//  alter it and redistribute it freely, subject to the following restrictions:
+//
+//  1. The origin of this software must not be misrepresented; you must not
+//     claim that you wrote the original software. If you use this software
+//     in a product, an acknowledgment in the product documentation would be
+//     appreciated but is not required.
+//  2. Altered source versions must be plainly marked as such, and must not be
+//     misrepresented as being the original software.
+//  3. This notice may not be removed or altered from any source
+//     distribution.
 //
 
 #import "AudioStreamer.h"
 #if TARGET_OS_IPHONE			
 #import <CFNetwork/CFNetwork.h>
 #import "UIDevice+Hardware.h"
-#define kCFCoreFoundationVersionNumber_MIN 550.32
-#else
-#define kCFCoreFoundationVersionNumber_MIN 550.00
 #endif
 
-#define BitRateEstimationMaxPackets 5000
+#define BitRateEstimationMaxPackets 6000
 #define BitRateEstimationMinPackets 50
 
 NSString * const ASStatusChangedNotification = @"ASStatusChangedNotification";
 NSString * const ASPresentAlertWithTitleNotification = @"ASPresentAlertWithTitleNotification";
 #ifdef SHOUTCAST_METADATA
-NSString * const ASUpdateMetadataNotification = @"ASUpdateMetadataNotification";
+NSString * const ASUpdateMetadataNotification = @"updateMetaData";
 #endif
 
 
@@ -226,6 +232,7 @@ void ASReadStreamCallBack
 
 @synthesize errorCode;
 @synthesize state;
+@synthesize stopReason;
 @synthesize bitRate;
 @synthesize httpHeaders;
 @synthesize numberOfChannels;
@@ -265,13 +272,17 @@ void ASReadStreamCallBack
 }
 
 //
-// bufferFillPercentage
+// bufferFillLevel
 //
 // returns a value between 0 and 1 that represents how full the buffer is
 //
--(double)bufferFillPercentage
+-(double)bufferFillLevel
 {
-	return (double)buffersUsed/(double)(kNumAQBufs - 1);
+	double percent = (double)buffersUsed/(double)(kNumAQBufs - 1);
+    if(percent>1.0)
+        return 1.0;
+    
+    return percent;
 }
 
 
@@ -579,7 +590,7 @@ void ASReadStreamCallBack
 //
 + (AudioFileTypeID)hintForFileExtension:(NSString *)fileExtension
 {
-	AudioFileTypeID fileTypeHint = kAudioFileMP3Type;
+	AudioFileTypeID fileTypeHint = kAudioFileAAC_ADTSType;
 	if ([fileExtension isEqual:@"mp3"])
 	{
 		fileTypeHint = kAudioFileMP3Type;
@@ -687,7 +698,7 @@ void ASReadStreamCallBack
 		if (fileLength > 0 && seekByteOffset > 0)
 		{
 			CFHTTPMessageSetHeaderFieldValue(message, CFSTR("Range"),
-				(CFStringRef)[NSString stringWithFormat:@"bytes=%ld-%ld", seekByteOffset, fileLength]);
+				(CFStringRef)[NSString stringWithFormat:@"bytes=%ld-%ld", seekByteOffset, fileLength - 1]);
 			discontinuous = vbr;
 		}
 		
@@ -709,6 +720,13 @@ void ASReadStreamCallBack
 								message:NSLocalizedStringFromTable(@"Unable to configure network read stream.", @"Errors", nil)];
 			return NO;
 		}
+		
+		//
+		// Handle proxies
+		//
+		CFDictionaryRef proxySettings = CFNetworkCopySystemProxySettings();
+		CFReadStreamSetProperty(stream, kCFStreamPropertyHTTPProxy, proxySettings);
+		CFRelease(proxySettings);
 		
 		//
 		// Handle SSL connections
@@ -795,7 +813,7 @@ void ASReadStreamCallBack
 			if (state != AS_STOPPING &&
 				state != AS_STOPPED)
 			{
-				NSLog(@"### Not starting audio thread. State code is: %ld", state);
+				NSLog(@"### Not starting audio thread. State code is: %u", state);
 			}
 			self.state = AS_INITIALIZED;
 			[pool release];
@@ -955,7 +973,7 @@ cleanup:
 					initWithTarget:self
 					selector:@selector(startInternal)
 					object:nil];
-            [internalThread setName:@"InternalThread"];
+			[internalThread setName:@"InternalThread"];
 			[internalThread start];
 		}
 	}
@@ -1236,7 +1254,14 @@ cleanup:
 		}
 		else if (state == AS_PAUSED)
 		{
-			err = AudioQueueStart(audioQueue, NULL);        
+			err = AudioQueueStart(audioQueue, NULL);
+#if TARGET_OS_IPHONE
+			if ([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)]) {
+				if (bgTaskId != UIBackgroundTaskInvalid) {
+					bgTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:NULL];
+				}
+			}
+#endif            
 			if (err)
 			{
 				[self failWithErrorCode:AS_AUDIO_QUEUE_START_FAILED];
@@ -1829,7 +1854,12 @@ cleanup:
 			{
 				if (self.state == AS_BUFFERING)
 				{
-					err = AudioQueueStart(audioQueue, NULL);					
+					err = AudioQueueStart(audioQueue, NULL);
+#if TARGET_OS_IPHONE                    
+					if ([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)]) {
+						bgTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:NULL];
+					}
+#endif					
 					if (err)
 					{
 						[self failWithErrorCode:AS_AUDIO_QUEUE_START_FAILED];
@@ -1841,7 +1871,12 @@ cleanup:
 				{
 					self.state = AS_WAITING_FOR_QUEUE_TO_START;
 
-					err = AudioQueueStart(audioQueue, NULL);				
+					err = AudioQueueStart(audioQueue, NULL);
+#if TARGET_OS_IPHONE 
+					if ([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)]) {
+						bgTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:NULL];
+					}
+#endif					
 					if (err)
 					{
 						[self failWithErrorCode:AS_AUDIO_QUEUE_START_FAILED];
@@ -1919,7 +1954,8 @@ cleanup:
 	{
 		packetBufferSize = kAQDefaultBufSize;
 	}
-  
+
+
 	// allocate audio queue buffers
 	for (unsigned int i = 0; i < kNumAQBufs; ++i)
 	{
@@ -2048,17 +2084,13 @@ cleanup:
 			for (int i = 0; i * sizeof(AudioFormatListItem) < formatListSize; i += sizeof(AudioFormatListItem))
 			{
 				AudioStreamBasicDescription pasbd = formatList[i].mASBD;
-
 				if(pasbd.mFormatID == kAudioFormatMPEG4AAC_HE_V2 && 
-#if TARGET_OS_IPHONE			
 				   [[UIDevice currentDevice] platformHasCapability:(UIDeviceSupportsARMV7)] && 
-#endif
-				   kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_MIN)
+				   kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iPhoneOS_4_0)
 				{
 					// We found HE-AAC v2 (SBR+PS), but before trying to play it
 					// we need to make sure that both the hardware and software are
 					// capable of doing so...
-					NSLog(@"HE-AACv2 found!");
 #if !TARGET_IPHONE_SIMULATOR
 					asbd = pasbd;
 #endif
@@ -2248,7 +2280,7 @@ cleanup:
 				// If there was some kind of issue with enqueueBuffer and we didn't
 				// make space for the new audio data then back out
 				//
-				if (bytesFilled >= packetBufferSize)
+				if (bytesFilled > packetBufferSize)
 				{
 					return;
 				}
@@ -2325,47 +2357,57 @@ cleanup:
 //    inID - the property ID
 //
 - (void)handlePropertyChangeForQueue:(AudioQueueRef)inAQ
-                          propertyID:(AudioQueuePropertyID)inID
+	propertyID:(AudioQueuePropertyID)inID
 {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    
-    @synchronized(self)
-    {
-        if (inID == kAudioQueueProperty_IsRunning)
-        {
-            if (state == AS_STOPPING)
-            {
-                self.state = AS_STOPPED;
-            }
-            else if (state == AS_WAITING_FOR_QUEUE_TO_START)
-            {
-                //
-                // Note about this bug avoidance quirk:
-                //
-                // On cleanup of the AudioQueue thread, on rare occasions, there would
-                // be a crash in CFSetContainsValue as a CFRunLoopObserver was getting
-                // removed from the CFRunLoop.
-                //
-                // After lots of testing, it appeared that the audio thread was
-                // attempting to remove CFRunLoop observers from the CFRunLoop after the
-                // thread had already deallocated the run loop.
-                //
-                // By creating an NSRunLoop for the AudioQueue thread, it changes the
-                // thread destruction order and seems to avoid this crash bug -- or
-                // at least I haven't had it since (nasty hard to reproduce error!)
-                //
-                [NSRunLoop currentRunLoop];
-                
-                self.state = AS_PLAYING;
-            }
-            else
-            {
-                NSLog(@"AudioQueue changed state in unexpected way.");
-            }
-        }
-    }
-    
-    [pool release];
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	@synchronized(self)
+	{
+		if (inID == kAudioQueueProperty_IsRunning)
+		{
+			if (state == AS_STOPPING)
+			{
+				self.state = AS_STOPPED;
+			}
+			else if (state == AS_WAITING_FOR_QUEUE_TO_START)
+			{
+				//
+				// Note about this bug avoidance quirk:
+				//
+				// On cleanup of the AudioQueue thread, on rare occasions, there would
+				// be a crash in CFSetContainsValue as a CFRunLoopObserver was getting
+				// removed from the CFRunLoop.
+				//
+				// After lots of testing, it appeared that the audio thread was
+				// attempting to remove CFRunLoop observers from the CFRunLoop after the
+				// thread had already deallocated the run loop.
+				//
+				// By creating an NSRunLoop for the AudioQueue thread, it changes the
+				// thread destruction order and seems to avoid this crash bug -- or
+				// at least I haven't had it since (nasty hard to reproduce error!)
+				//              
+				
+				[NSRunLoop currentRunLoop];
+
+				self.state = AS_PLAYING;
+
+#if TARGET_OS_IPHONE				
+				if ([[UIDevice currentDevice] respondsToSelector:@selector(isMultitaskingSupported)]) {
+					if (bgTaskId != UIBackgroundTaskInvalid) {
+						[[UIApplication sharedApplication] endBackgroundTask: bgTaskId];
+					}
+					
+					bgTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:NULL];
+				}
+#endif                
+			}
+			else
+			{
+				NSLog(@"AudioQueue changed state in unexpected way.");
+			}
+		}
+	}
+	
+	[pool release];
 }
 
 #if TARGET_OS_IPHONE
@@ -2378,19 +2420,29 @@ cleanup:
 //    inAQ - the audio queue
 //    inID - the property ID
 //
-- (void)handleInterruptionChangeToState:(AudioQueuePropertyID)inInterruptionState
+- (void)handleInterruptionChangeToState:(AudioQueuePropertyID)inInterruptionState 
 {
 	if (inInterruptionState == kAudioSessionBeginInterruption)
-	{
-		[self pause];
+	{ 
+		if ([self isPlaying]) {
+			[self pause];
+			
+			pausedByInterruption = YES; 
+		} 
 	}
-	else if (inInterruptionState == kAudioSessionEndInterruption)
+	else if (inInterruptionState == kAudioSessionEndInterruption) 
 	{
 		AudioSessionSetActive( true );
-		[self pause];
+		
+		if ([self isPaused] && pausedByInterruption) {
+			[self pause]; // this is actually resume
+			
+			pausedByInterruption = NO; // this is redundant 
+		}
 	}
 }
 #endif
 
 @end
+
 
