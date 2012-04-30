@@ -9,6 +9,7 @@
 #import "radioStation.h"
 #import "songDetailView.h"
 //#import "JHSpotifyEngine.h"
+#import "TestFlight.h"
 #import "Lyssna_NERadioAppDelegate.h"
 
 #define kSpotify @"com.devsnackinc.LyssnaNERadio.spotify" 
@@ -25,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	[TestFlight passCheckpoint:@"Viewing song details"];
 	self.tableView.allowsSelection = YES;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -38,7 +40,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    spotifyEngine = [[JHSpotifyEngine alloc] initWithDelegate:self];
+	spotifyEngine = [[JHSpotifyEngine alloc] initWithDelegate:self];
     [spotifyEngine searchTrack:[NSString stringWithFormat:@"%@ %@", songi.artist, songi.title]];
 	[self.tableView reloadData];
 }

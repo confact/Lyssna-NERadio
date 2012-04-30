@@ -17,8 +17,9 @@
 #import "song.h"
 #import "lastPlayedListViewer.h"
 #import "stationPlayedSongs.h"
+#import "TestFlight.h"
 
-#define kSampleAppKey @"49c8616108f04605a22f1188ad8ffa5a"
+#define kSampleAppKey @"44d2f3b657bf4390"
 
 @implementation DetailView
 @synthesize streamURL;
@@ -83,6 +84,7 @@
 		[appDelegate.streamer release];
         appDelegate.url = nil;
 		appDelegate.streamer = nil;
+		[self setMediaInfoToNil];
 	}
 }
 
@@ -132,13 +134,12 @@
 	 selector:@selector(playbackStateChanged:)
 	 name:ASStatusChangedNotification
 	 object:appDelegate.streamer];
-#ifdef SHOUTCAST_METADATA
 	[[NSNotificationCenter defaultCenter]
 	 addObserver:self
 	 selector:@selector(metadataChanged:)
 	 name:ASUpdateMetadataNotification
 	 object:appDelegate.streamer];
-#endif
+	[TestFlight passCheckpoint:@"Start Listening"];
 }
 
 //
@@ -161,12 +162,16 @@
 	//self.volumeSlider.value = 1.00;
 	[super viewDidLoad];
 	self.overlaycolorView.backgroundColor = [UIColor colorWithRed:39.0/255.0 green:40.0/255.0 blue:44.0/255.0 alpha:1];
-    awView = [AdWhirlView requestAdWhirlViewWithDelegate:self];
+    bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+	bannerView_.adUnitID = kSampleAppKey;
+	
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [awView setFrame:CGRectMake(0.0f, 0.0f, 320.0f, 50.0f)];
-        [awView setClipsToBounds:false]; // Here is the important line
+        [bannerView_ setFrame:CGRectMake(0.0f, 0.0f, 320.0f, 50.0f)];
+        [bannerView_ setClipsToBounds:false]; // Here is the important line
     }
-    [self.view addSubview:awView];
+	bannerView_.rootViewController=self;
+	[bannerView_ loadRequest:[GADRequest request]];
+    [self.view addSubview:bannerView_];
     
 	/*self.songtitle.textColor = [UIColor colorWithRed:61.0/255.0
 											   green:88.0/255.0
@@ -200,19 +205,6 @@
     [self.songtitle setText:@""];
     [self.songartist setText:@""];
     [self justStartit];
-}
-
-- (void)adWhirlDidReceiveAd:(AdWhirlView *)adWhirlView {
-    
-    [UIView setAnimationDuration:0.7];
-    
-    CGSize adSize = [awView actualAdSize];
-    CGRect newFrame = awView.frame;
-    
-    newFrame.size = adSize;
-    newFrame.origin.x = (self.view.bounds.size.width - adSize.width)/ 2;
-    
-    awView.frame = newFrame;
 }
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
@@ -313,7 +305,9 @@
 		[self spinButton];
 	}
 }
-
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
 //
 // buttonPressed:
 //
@@ -526,14 +520,33 @@
 			 object:self
 			 userInfo:nil];
 			[[NSNotificationCenter defaultCenter] postNotification:notification];
-		
+			[self setMediaInfoWithArtist:streamArtist andWithTitle:streamTitle];
 		}
 		
 	}
 	self.currentArtist = streamArtist;
 	self.currentTitle = streamTitle;
 }
+
 #endif
+- (void) setMediaInfoWithArtist:(NSString *)artist andWithTitle:(NSString*)title {
+    if(NSClassFromString(@"MPNowPlayingInfoCenter")) {
+        NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
+        //NSString * imName = @"imagetest.png"; // Artwork image
+        [dict setObject:NSLocalizedString(title, @"") forKey:MPMediaItemPropertyTitle];
+        [dict setObject:NSLocalizedString(artist, @"") forKey:MPMediaItemPropertyArtist];
+        //MPMediaItemArtwork * mArt = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:imName]];
+        //[dict setObject:mArt forKey:MPMediaItemPropertyArtwork];
+        [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nil;
+        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:dict];
+        [dict release];
+    }
+}
+- (void) setMediaInfoToNil {
+    if(NSClassFromString(@"MPNowPlayingInfoCenter")) {
+        [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nil;
+    }
+}
 //
 // textFieldShouldReturn:
 //

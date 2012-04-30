@@ -11,12 +11,12 @@
 #import <iAd/iAD.h>
 #import "radioStation.h"
 #import <MediaPlayer/MediaPlayer.h>
-#import "AdWhirlView.h"
-#import "AdWhirlDelegateProtocol.h"
+#import <AVFoundation/AVFoundation.h>
+#import "GADBannerView.h"
 
 @class AudioStreamer;
 
-@interface DetailView : UIViewController <AdWhirlDelegate> {
+@interface DetailView : UIViewController <AVAudioPlayerDelegate> {
 	IBOutlet UIButton *button;
 	//IBOutlet UISlider *volumeSlider;
 	IBOutlet UILabel *positionLabel;
@@ -29,7 +29,7 @@
 	
 	radioStation *radio;
 	
-	AdWhirlView *awView;
+	GADBannerView *bannerView_;
     
 	BOOL bannerIsVisible;
     

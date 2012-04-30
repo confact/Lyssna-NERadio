@@ -6,8 +6,12 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+//TESTFLIGHT FIX THIS!
+#define TESTING 1
+
 #import "Lyssna_NERadioAppDelegate.h"
 #import "radioStation.h"
+#import "TestFlight.h"
 #import "radiostationerTableViewController.h"
 #import "song.h"
 //#import "navigationbar.h"
@@ -91,7 +95,13 @@
 		[self.songs addObject:info];
 	}
 	[fetchRequest release];
-	
+    
+    
+    [TestFlight takeOff:@"5cfe1d09a14532e9e7eac413db2b6068_NzI1NTUyMDEyLTAzLTE4IDEyOjU4OjA4LjAwMTgzMQ"];
+    #ifdef TESTING
+        [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
+    #endif
+
     //Initialize the coffee array.
     
     //Once the db is copied, get the initial data to display on the screen.
@@ -102,7 +112,7 @@
 	//rootViewController.managedObjectContext = context;
 	// Configure and show the window
     //[tabbarController.navigationController.navigationBar setBackgroundColor:[UIColor colorWithHue:219 saturation:41 brightness:73 alpha:1]];
-    
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [window addSubview:[tabbarController view]];
     [window makeKeyAndVisible];
 	[Appirater appLaunched:YES];
@@ -373,7 +383,9 @@
 	self.uiIsVisible = YES;
 	[self.detailView forceUIUpdate];
 }
-
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     /*
@@ -399,7 +411,32 @@
 	 name:ASPresentAlertWithTitleNotification
 	 object:nil];
 }
-
+- (BOOL)textFieldShouldReturn:(UITextField *)sender
+{
+	[sender resignFirstResponder];
+	[self createStreamer];
+	return YES;
+}
+#pragma mark Remote Control Events
+/* The iPod controls will send these events when the app is in the background */
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+	switch (event.subtype) {
+		case UIEventSubtypeRemoteControlTogglePlayPause:
+			[self.streamer pause];
+			break;
+		case UIEventSubtypeRemoteControlPlay:
+            [self.streamer start];
+			break;
+		case UIEventSubtypeRemoteControlPause:
+			[self.streamer pause];
+			break;
+		case UIEventSubtypeRemoteControlStop:
+			[self.streamer pause];
+			break;
+		default:
+			break;
+	}
+}
 
 #pragma mark -
 #pragma mark Memory management
