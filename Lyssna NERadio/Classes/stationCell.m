@@ -17,9 +17,9 @@
 		// Initialization code
 		
 		UIImage *backgroundImage = [UIImage imageNamed:@"cellbg.png"];
-		UIImageView *bgView = [[UIImageView alloc] initWithFrame:self.frame];
-		bgView.image = backgroundImage;
-		[self setBackgroundView: bgView];
+		UIImageView *bgView = [[UIImageView alloc] initWithImage:backgroundImage];
+		bgView.contentMode = UIViewContentModeScaleToFill;
+		self.backgroundView = bgView;
 		[bgView release];
 
 		

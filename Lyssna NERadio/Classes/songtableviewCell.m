@@ -16,9 +16,9 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         // Initialization code
 		UIImage *backgroundImage = [UIImage imageNamed:@"cellbg.png"];
-		UIImageView *bgView = [[UIImageView alloc] initWithFrame:self.backgroundView.frame];
-		bgView.image = backgroundImage;
-		[self setBackgroundView: bgView];
+		UIImageView *bgView = [[UIImageView alloc] initWithImage:backgroundImage];
+		bgView.contentMode = UIViewContentModeScaleToFill;
+		self.backgroundView = bgView;
 		[bgView release];
 		lattitle = [[UILabel alloc]init];
 		
