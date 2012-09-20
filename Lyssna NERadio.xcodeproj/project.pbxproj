@@ -52,8 +52,6 @@
 		9651C07013079F7300CD9C61 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9651C06D13079F7300CD9C61 /* README.md */; };
 		9651C07613079F8200CD9C61 /* icon_bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9651C07113079F8200CD9C61 /* icon_bookmark.png */; };
 		9651C07713079F8200CD9C61 /* icon_volume.png in Resources */ = {isa = PBXBuildFile; fileRef = 9651C07213079F8200CD9C61 /* icon_volume.png */; };
-		9651C07D13079F8D00CD9C61 /* playbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9651C07B13079F8D00CD9C61 /* playbutton.png */; };
-		9651C07E13079F8D00CD9C61 /* stopbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9651C07C13079F8D00CD9C61 /* stopbutton.png */; };
 		9651C0811307A02200CD9C61 /* song.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651C0801307A02200CD9C61 /* song.m */; };
 		9651C0841307A04500CD9C61 /* radioStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9651C0831307A04500CD9C61 /* radioStation.m */; };
 		9651C0B21307A35800CD9C61 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9651C0B11307A35800CD9C61 /* libsqlite3.dylib */; };
@@ -74,7 +72,15 @@
 		966F396615399AAF006487EB /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 966F396215399AAF006487EB /* README.txt */; };
 		966F396715399AAF006487EB /* release_notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 966F396315399AAF006487EB /* release_notes.txt */; };
 		966F39691539A086006487EB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 966F39681539A085006487EB /* libz.dylib */; };
-		967796AB132EF59700E600FE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 967796AA132EF59700E600FE /* Default.png */; };
+		96724F10160B9466004BC230 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96724F0F160B9466004BC230 /* Default-568h@2x.png */; };
+		96724F12160B9485004BC230 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96724F11160B9485004BC230 /* Default@2x.png */; };
+		96724F14160B948C004BC230 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 96724F13160B948C004BC230 /* Default.png */; };
+		96724F16160B9499004BC230 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 96724F15160B9499004BC230 /* Default-Portrait@2x~ipad.png */; };
+		96724F18160B94A0004BC230 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 96724F17160B94A0004BC230 /* Default-Portrait~ipad.png */; };
+		96724F1B160B981A004BC230 /* playbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 96724F19160B9819004BC230 /* playbutton.png */; };
+		96724F1C160B981A004BC230 /* playbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96724F1A160B9819004BC230 /* playbutton@2x.png */; };
+		96724F1F160B98CB004BC230 /* stopbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 96724F1D160B98CB004BC230 /* stopbutton.png */; };
+		96724F20160B98CB004BC230 /* stopbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96724F1E160B98CB004BC230 /* stopbutton@2x.png */; };
 		967796B3132EFA0200E600FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 967796B1132EFA0200E600FE /* Localizable.strings */; };
 		967796B4132EFB2D00E600FE /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967796B6132EFB2D00E600FE /* DetailView.xib */; };
 		967796BA132EFB3F00E600FE /* Lyssna_NERadioAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 967796BC132EFB3F00E600FE /* Lyssna_NERadioAppDelegate.m */; };
@@ -169,8 +175,6 @@
 		9651C06D13079F7300CD9C61 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		9651C07113079F8200CD9C61 /* icon_bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_bookmark.png; sourceTree = "<group>"; };
 		9651C07213079F8200CD9C61 /* icon_volume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_volume.png; sourceTree = "<group>"; };
-		9651C07B13079F8D00CD9C61 /* playbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playbutton.png; sourceTree = "<group>"; };
-		9651C07C13079F8D00CD9C61 /* stopbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopbutton.png; sourceTree = "<group>"; };
 		9651C07F1307A02200CD9C61 /* song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = song.h; sourceTree = "<group>"; };
 		9651C0801307A02200CD9C61 /* song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = song.m; sourceTree = "<group>"; };
 		9651C0821307A04500CD9C61 /* radioStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = radioStation.h; sourceTree = "<group>"; };
@@ -206,7 +210,15 @@
 		966F396315399AAF006487EB /* release_notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
 		966F396415399AAF006487EB /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		966F39681539A085006487EB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		967796AA132EF59700E600FE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		96724F0F160B9466004BC230 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		96724F11160B9485004BC230 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		96724F13160B948C004BC230 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		96724F15160B9499004BC230 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "../Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		96724F17160B94A0004BC230 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		96724F19160B9819004BC230 /* playbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playbutton.png; sourceTree = "<group>"; };
+		96724F1A160B9819004BC230 /* playbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playbutton@2x.png"; sourceTree = "<group>"; };
+		96724F1D160B98CB004BC230 /* stopbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopbutton.png; sourceTree = "<group>"; };
+		96724F1E160B98CB004BC230 /* stopbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopbutton@2x.png"; sourceTree = "<group>"; };
 		967796B2132EFA0200E600FE /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = Classes/English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		967796B5132EFB2D00E600FE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailView.xib; sourceTree = "<group>"; };
 		967796BB132EFB3F00E600FE /* en */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = en; path = en.lproj/Lyssna_NERadioAppDelegate.m; sourceTree = "<group>"; };
@@ -406,10 +418,14 @@
 		9651BFD813079CF400CD9C61 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				96724F17160B94A0004BC230 /* Default-Portrait~ipad.png */,
+				96724F15160B9499004BC230 /* Default-Portrait@2x~ipad.png */,
+				96724F13160B948C004BC230 /* Default.png */,
+				96724F11160B9485004BC230 /* Default@2x.png */,
+				96724F0F160B9466004BC230 /* Default-568h@2x.png */,
 				960F2E94140E2FCA004C22F1 /* bg.png */,
 				960F2E92140E2E9B004C22F1 /* Volume-up.png */,
 				960F2E90140E2E48004C22F1 /* Volume-down.png */,
-				967796AA132EF59700E600FE /* Default.png */,
 				9651C0D61307AD3A00CD9C61 /* loadingbutton.png */,
 				9651C0CD1307AA0F00CD9C61 /* background.png */,
 				963CEC6C13490617004659DE /* background@2x.png */,
@@ -417,8 +433,10 @@
 				963CEC6D13490617004659DE /* cellbg@2x.png */,
 				967796B1132EFA0200E600FE /* Localizable.strings */,
 				9651C0C91307A7E300CD9C61 /* radiostationDatabase.sqlite */,
-				9651C07B13079F8D00CD9C61 /* playbutton.png */,
-				9651C07C13079F8D00CD9C61 /* stopbutton.png */,
+				96724F19160B9819004BC230 /* playbutton.png */,
+				96724F1A160B9819004BC230 /* playbutton@2x.png */,
+				96724F1D160B98CB004BC230 /* stopbutton.png */,
+				96724F1E160B98CB004BC230 /* stopbutton@2x.png */,
 				9651C07113079F8200CD9C61 /* icon_bookmark.png */,
 				963CEC6E13490617004659DE /* icon_bookmark@2x.png */,
 				9651C07213079F8200CD9C61 /* icon_volume.png */,
@@ -615,15 +633,12 @@
 				9651C07013079F7300CD9C61 /* README.md in Resources */,
 				9651C07613079F8200CD9C61 /* icon_bookmark.png in Resources */,
 				9651C07713079F8200CD9C61 /* icon_volume.png in Resources */,
-				9651C07D13079F8D00CD9C61 /* playbutton.png in Resources */,
-				9651C07E13079F8D00CD9C61 /* stopbutton.png in Resources */,
 				9651C0CA1307A7E300CD9C61 /* radiostationDatabase.sqlite in Resources */,
 				9651C0CC1307A81E00CD9C61 /* cellbg.png in Resources */,
 				9651C0CE1307AA0F00CD9C61 /* background.png in Resources */,
 				967796B4132EFB2D00E600FE /* DetailView.xib in Resources */,
 				9651C0D71307AD3A00CD9C61 /* loadingbutton.png in Resources */,
 				969B0C2B13214D3E00102B8C /* songDetailView.xib in Resources */,
-				967796AB132EF59700E600FE /* Default.png in Resources */,
 				967796B3132EFA0200E600FE /* Localizable.strings in Resources */,
 				96C52297133ABD2900AFBFEC /* lastPlayedListViewer.xib in Resources */,
 				963CEC7013490618004659DE /* background@2x.png in Resources */,
@@ -643,6 +658,15 @@
 				966F396615399AAF006487EB /* README.txt in Resources */,
 				966F396715399AAF006487EB /* release_notes.txt in Resources */,
 				96F122A4155EBAE200013A0D /* README.txt in Resources */,
+				96724F10160B9466004BC230 /* Default-568h@2x.png in Resources */,
+				96724F12160B9485004BC230 /* Default@2x.png in Resources */,
+				96724F14160B948C004BC230 /* Default.png in Resources */,
+				96724F16160B9499004BC230 /* Default-Portrait@2x~ipad.png in Resources */,
+				96724F18160B94A0004BC230 /* Default-Portrait~ipad.png in Resources */,
+				96724F1B160B981A004BC230 /* playbutton.png in Resources */,
+				96724F1C160B981A004BC230 /* playbutton@2x.png in Resources */,
+				96724F1F160B98CB004BC230 /* stopbutton.png in Resources */,
+				96724F20160B98CB004BC230 /* stopbutton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -807,12 +831,14 @@
 					"\"$(SRCROOT)/Lyssna NERadio\"",
 					"\"$(SRCROOT)/Lyssna NERadio/MMSDK\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_LDFLAGS[arch=*]" = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s armv6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -852,6 +878,7 @@
 					"\"$(SRCROOT)/Lyssna NERadio\"",
 					"\"$(SRCROOT)/Lyssna NERadio/MMSDK\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_LDFLAGS[arch=*]" = (
 					"-ObjC",
 					"-all_load",
@@ -862,6 +889,7 @@
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s armv6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -916,6 +944,7 @@
 					"\"$(SRCROOT)/Lyssna NERadio\"",
 					"\"$(SRCROOT)/Lyssna NERadio/MMSDK\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_LDFLAGS[arch=*]" = (
 					"-ObjC",
 					"-all_load",
@@ -924,6 +953,7 @@
 				PROVISIONING_PROFILE = "C6CC3114-EB02-4DD4-9A3B-7E1FD3E8B713";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s armv6";
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Ad Hoc";

@@ -161,6 +161,8 @@
     self.bannerIsVisible=NO;*/
 	//self.volumeSlider.value = 1.00;
 	[super viewDidLoad];
+	[self.view setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin];
+	[self.view setAutoresizesSubviews:YES];
 	self.overlaycolorView.backgroundColor = [UIColor colorWithRed:39.0/255.0 green:40.0/255.0 blue:44.0/255.0 alpha:1];
     bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
 	bannerView_.adUnitID = kSampleAppKey;

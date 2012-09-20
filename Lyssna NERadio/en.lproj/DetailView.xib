@@ -59,7 +59,7 @@
 							<object class="IBUIButton" id="970320171">
 								<reference key="NSNextResponder" ref="804761481"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{150, 20}, {72, 73}}</string>
+								<string key="NSFrame">{{159, 25}, {55, 55}}</string>
 								<reference key="NSSuperview" ref="804761481"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="24947475"/>
@@ -279,6 +279,14 @@
 					<int key="connectionID">65</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">overlaycolorView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="804761481"/>
+					</object>
+					<int key="connectionID">66</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">buttonPressed:</string>
 						<reference key="source" ref="970320171"/>
@@ -378,7 +386,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">65</int>
+			<int key="maxID">66</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
