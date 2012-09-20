@@ -520,6 +520,10 @@
 			 object:self
 			 userInfo:nil];
 			[[NSNotificationCenter defaultCenter] postNotification:notification];
+			
+		}
+		if(streamTitle != nil && streamArtist != nil)
+		{
 			[self setMediaInfoWithArtist:streamArtist andWithTitle:streamTitle];
 		}
 		

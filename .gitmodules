@@ -1,0 +1,3 @@
+[submodule "audiostreamer"]
+	path = audiostreamer
+	url = git@github.com:confact/AudioStreamer.git
