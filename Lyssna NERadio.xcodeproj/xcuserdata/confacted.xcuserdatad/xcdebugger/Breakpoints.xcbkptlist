@@ -79,11 +79,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Lyssna NERadio/Classes/DetailView.m"
-         timestampString = "357343598.563111"
+         timestampString = "369858262.342813"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "609"
-         endingLineNumber = "609"
+         startingLineNumber = "611"
+         endingLineNumber = "611"
          landmarkName = "@implementation DetailView"
          landmarkType = "3">
       </FileBreakpoint>
@@ -93,11 +93,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Lyssna NERadio/Classes/DetailView.m"
-         timestampString = "357343598.563111"
+         timestampString = "369858262.342813"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "606"
-         endingLineNumber = "606"
+         startingLineNumber = "608"
+         endingLineNumber = "608"
          landmarkName = "-viewControllerForPresentingModalView"
          landmarkType = "5">
       </FileBreakpoint>
@@ -107,7 +107,21 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Lyssna NERadio/Classes/DetailView.m"
-         timestampString = "357343598.563111"
+         timestampString = "369858262.342813"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "606"
+         endingLineNumber = "606"
+         landmarkName = "-adWhirlApplicationKey"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Lyssna NERadio/Classes/DetailView.m"
+         timestampString = "369858262.342813"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "604"
@@ -121,25 +135,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Lyssna NERadio/Classes/DetailView.m"
-         timestampString = "357343598.563111"
+         timestampString = "369858262.342813"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "602"
-         endingLineNumber = "602"
-         landmarkName = "-adWhirlApplicationKey"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Lyssna NERadio/Classes/DetailView.m"
-         timestampString = "357343598.563111"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "610"
-         endingLineNumber = "610"
+         startingLineNumber = "612"
+         endingLineNumber = "612"
          landmarkName = "@implementation DetailView"
          landmarkType = "3">
       </FileBreakpoint>
